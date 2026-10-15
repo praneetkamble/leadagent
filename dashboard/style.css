@@ -1,0 +1,47 @@
+:root{--ink:#111;--paper:#faf8f3;--red:#d62828;--mute:#666;--ok:#1b7f3b}
+*{box-sizing:border-box}
+body{margin:0;font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--paper);color:var(--ink)}
+.top{padding:26px 24px 8px;max-width:1200px;margin:0 auto}
+.brand{font-weight:900;font-size:2rem;letter-spacing:-.02em}.brand span{color:var(--red)}
+.sub{margin:.2rem 0;color:var(--mute)}
+.status{font:600 .78rem ui-monospace,monospace;color:var(--mute);margin:.5rem 0 0}
+.grid{display:grid;grid-template-columns:300px 1fr;gap:20px;max-width:1200px;margin:12px auto 30px;padding:0 24px}
+@media(max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}}
+.panel{border:2.5px solid var(--ink);background:#fff;padding:18px;box-shadow:6px 6px 0 var(--ink);min-width:0}
+h2{margin:0 0 10px;font-size:.9rem;text-transform:uppercase;letter-spacing:.06em}.gap{margin-top:22px}
+h3{margin:18px 0 6px;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em}
+.lbl{display:block;font-size:.8rem;color:var(--mute);margin-bottom:4px}
+select,textarea,input[type=text]{width:100%;font:inherit;padding:8px 10px;border:2.5px solid var(--ink);background:#fff}
+textarea{min-height:300px;font-family:ui-monospace,monospace;font-size:.85rem}
+.chk{display:flex;gap:8px;align-items:center;margin:10px 0;font-size:.85rem}
+button{font:700 .9rem inherit;font-family:inherit;border:2.5px solid var(--ink);background:var(--ink);color:#fff;padding:9px 16px;cursor:pointer}
+button:hover:not(:disabled){background:var(--red);border-color:var(--red)}
+button:disabled{opacity:.4;cursor:not-allowed}
+button.ok{background:var(--ok);border-color:var(--ok)}button.ok:hover:not(:disabled){background:#12602b;border-color:#12602b}
+button.alt{background:#fff;color:var(--ink)}button.alt:hover:not(:disabled){background:var(--ink);color:#fff;border-color:var(--ink)}
+.msg{color:var(--red);font-size:.85rem;min-height:1.2em}
+.hint{color:var(--mute)}
+.runs{list-style:none;margin:0;padding:0}
+.runs li button{all:unset;display:block;width:100%;cursor:pointer;padding:8px 6px;border-bottom:1px solid #ddd;font-size:.85rem}
+.runs li button:hover,.runs li.on button{background:var(--paper)}
+.pill{display:inline-block;font:700 .65rem ui-monospace,monospace;padding:2px 7px;border:1.5px solid var(--ink);text-transform:uppercase;margin-left:6px}
+.pill.awaiting_approval{background:#fff3b0}.pill.approved{background:#c9f2d3}.pill.rejected,.pill.skipped_low_fit,.pill.error{background:#eee;color:#555}
+.head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:flex-start}
+.head h2{font-size:1.4rem;text-transform:none;letter-spacing:0;margin:0}
+.score{font:900 2.4rem/1 system-ui;text-align:right}.score small{font-size:.9rem;color:var(--mute);font-weight:600}
+.rub{width:100%;border-collapse:collapse;font-size:.85rem}
+.rub td{padding:5px 6px;border-bottom:1px solid #eee;vertical-align:top}
+.bar{height:8px;background:#eee;min-width:60px}.bar i{display:block;height:100%;background:var(--red)}
+.rub .no{color:#999}
+.ev{color:var(--mute);font-size:.75rem}
+.trace{list-style:none;margin:0;padding:0;border-left:3px solid var(--ink)}
+.trace li{padding:5px 0 5px 12px;font-size:.85rem;position:relative}
+.trace li:before{content:"";position:absolute;left:-8px;top:12px;width:11px;height:11px;background:#fff;border:2.5px solid var(--ink)}
+.trace li.human:before{background:var(--red);border-color:var(--red)}
+.trace code{font:.7rem ui-monospace,monospace;background:var(--paper);padding:1px 5px;margin-right:6px}
+.trace small{color:var(--mute)}
+.draft{border:2.5px solid var(--red);padding:12px;background:#fffafa}
+.gate{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.ground{font-size:.8rem;margin:6px 0}.ground.bad{color:var(--red);font-weight:600}.ground.good{color:var(--ok)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}@media(max-width:1000px){.two{grid-template-columns:1fr}}
+details{font-size:.8rem;margin-top:8px}details pre{white-space:pre-wrap;word-break:break-word;background:var(--paper);padding:8px;font-size:.72rem;max-height:220px;overflow:auto}

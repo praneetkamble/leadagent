@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:,">
+<title>LeadAgent · human-in-the-loop lead pipeline</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">LeadAgent<span>.</span></div>
+  <p class="sub">Extract facts → score fit → draft a pitch → <b>a human decides</b>. Nothing is ever sent automatically.</p>
+  <p id="info" class="status">loading…</p>
+</header>
+<main class="grid">
+  <aside class="panel">
+    <h2>New run</h2>
+    <label for="fixture" class="lbl">Saved sample website</label>
+    <select id="fixture"></select>
+    <label class="chk"><input type="checkbox" id="force"> Draft even if fit is weak</label>
+    <button id="go" type="button">Run agent</button>
+    <p id="runMsg" class="msg" role="status"></p>
+    <h2 class="gap">Runs</h2>
+    <ul id="runs" class="runs"></ul>
+  </aside>
+  <section id="detail" class="panel" aria-live="polite"><p class="hint">Pick a sample website and press <b>Run agent</b>.</p></section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>

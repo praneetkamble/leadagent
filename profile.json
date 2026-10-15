@@ -1,0 +1,11 @@
+{
+  "seller_name": "Praneet Kamble",
+  "seller_role": "web developer running a small web studio near Mumbai",
+  "portfolio_url": "https://m-10-nu.vercel.app",
+  "services": {
+    "website": "a fast mobile-friendly one-page or five-page website",
+    "qr_ordering": "QR table ordering for cafes and restaurants",
+    "gbp": "Google Business Profile fixes so customers can find you on Maps"
+  },
+  "target_types": ["cafe", "restaurant", "salon", "clinic", "bakery"]
+}
