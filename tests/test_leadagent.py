@@ -36,6 +36,15 @@ def test_no_online_booking_phrase_is_negative():
     assert facts("glow_studio_salon")["has_online_booking"]["value"] is False
 
 
+
+def test_business_type_matches_whole_words_only():
+    html = ('<html><head><title>The Daily Grind | Pune</title></head><body><h1>The Daily Grind</h1>'
+            '<p>Spacious seating. Fresh coffee all day.</p></body></html>')
+    F = extract_facts(parse_html(html))
+    assert F["business_type"]["value"] == "cafe"
+    spa = extract_facts(parse_html('<html><head><title>Lotus Spa | Pune</title></head><body><h1>Lotus Spa</h1></body></html>'))
+    assert spa["business_type"]["value"] == "salon"
+
 # ---------- scoring
 def test_rubric_sums_to_100_and_scores_are_deterministic():
     assert sum(r[1] for r in RUBRIC) == 100

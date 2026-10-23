@@ -39,7 +39,8 @@ def extract_facts(doc: dict) -> dict:
     btype, ev = "other", ""
     probe = (doc["title"] + " " + doc["h1"] + " " + text[:600]).lower()
     for kw, t in TYPES.items():
-        if kw in probe:
+        # whole-word match (plurals allowed) so "spacious" or "seafood-free" don't trigger "spa"/"food"
+        if re.search(rf"\b{re.escape(kw)}(?:s|es)?\b", probe):
             btype, ev = t, kw; break
     put("business_type", btype, f"keyword '{ev}'" if ev else "no keyword matched")
 
