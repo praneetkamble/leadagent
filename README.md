@@ -145,7 +145,7 @@ Docker: `docker build -t leadagent . && docker run -p 8001:8001 -v $PWD/data:/da
 pip install -r requirements-dev.txt && python -m pytest -q
 ```
 
-The 19 tests cover extraction, the rubric, the pipeline trace, pause and restart, approve/edit/reject, grounding, the mocked LLM with fallback, URL safety and the API.
+The 21 tests cover extraction, the rubric, the pipeline trace, pause and restart, approve/edit/reject, grounding, the mocked LLM with fallback, URL safety and the API.
 
 ---
 
