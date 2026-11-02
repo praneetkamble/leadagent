@@ -4,7 +4,7 @@
 
 ![Python](https://img.shields.io/badge/python-3.12%2B-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-backend-009688?logo=fastapi&logoColor=white)
-![Tests](https://img.shields.io/badge/tests-19%20passing-2ea44f)
+![Tests](https://img.shields.io/badge/tests-21%20passing-2ea44f)
 ![Human in the loop](https://img.shields.io/badge/human--in--the--loop-nothing%20is%20sent-b3261e)
 
 LeadAgent takes a business website (a saved sample page, pasted text or HTML, or an opt-in public URL) and runs a transparent pipeline: it extracts facts with evidence, scores the fit with a fixed rubric, drafts a pitch, verifies the draft against the source, and then **pauses for a person to approve, edit or reject it**. Every step is written to a trace log, and each run is persisted to disk, so the pause survives a restart.

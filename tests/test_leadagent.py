@@ -184,3 +184,11 @@ def test_api_flow(tmp_path, monkeypatch):
     assert c.get("/api/runs/zzzz").status_code == 404
     assert len(c.get("/api/runs").json()) == 1
     assert "LeadAgent" in c.get("/").text
+
+
+def test_grounding_matches_whole_numbers_not_substrings():
+    F = {"business_name": {"value": "Brew & Bloom Cafe"}}
+    g = pitch.grounding_check({"subject": "Brew & Bloom Cafe", "body": "Brew & Bloom Cafe could get 20 more orders"}, F, "Open since 2024")
+    assert not g["passed"] and any("'20'" in p for p in g["problems"])
+    ok = pitch.grounding_check({"subject": "Brew & Bloom Cafe", "body": "Your footer says 2024."}, F, "Open since 2024")
+    assert ok["passed"]

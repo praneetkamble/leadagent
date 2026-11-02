@@ -63,8 +63,10 @@ def grounding_check(draft: dict, F: dict, site_text: str) -> dict:
     p = json.dumps(profile())
     allowed = site_text + " " + p + " " + json.dumps({k: v["value"] for k, v in F.items()})
     problems = []
+    # Compare whole number tokens, so "20" is not "found" inside "2024".
+    allowed_nums = {n.strip(".,") for n in re.findall(r"\d[\d,.]*", allowed)}
     for num in set(re.findall(r"\d[\d,.]*", draft["subject"] + " " + draft["body"])):
-        if num.strip(".,") and num.strip(".,") not in allowed:
+        if num.strip(".,") and num.strip(".,") not in allowed_nums:
             problems.append(f"number '{num}' not found in site text or profile")
     for url in set(re.findall(r"https?://[^\s)]+", draft["body"])):
         if url.rstrip(".,") not in allowed:
